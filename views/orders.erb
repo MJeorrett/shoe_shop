@@ -1,0 +1,27 @@
+<table>
+  <thead>
+    <th>Address</th>
+    <th>Quantity</th>
+    <th>Size</th>
+  </thead>
+  <% @orders.each do |order| %>
+    <tr>
+      <td>
+        <%= order.address %>
+      </td>
+      <td class="numeric">
+        <%= order.quantity %>
+      </td>
+      <td class="numeric">
+        <%= order.size %>
+      </td>
+    </tr>
+  <% end %>
+  <tfoot>
+    <tr>
+      <td class="total">Total</td>
+      <td class="numeric"><%= @total_quantity %></td>
+      <td></td>
+    </tr>
+  </tfoot>
+</table>

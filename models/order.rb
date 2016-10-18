@@ -21,9 +21,13 @@ class Order
     set_id( order_data.first['id'] )
   end
 
-  def self.all()
+  def self.all_data()
     sql = "SELECT * FROM orders"
-    data = SqlRunner.run( sql )
+    return SqlRunner.run( sql )
+  end
+
+  def self.all()
+    data = self.all_data()
     return self.data_to_objects( data )
   end
 
